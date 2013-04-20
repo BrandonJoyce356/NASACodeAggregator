@@ -12,12 +12,24 @@ var nasa = {
             var repository = repositories[index];
             var localRepositoryPath = __dirname + "/" + config.localRepositoriesFolder + "/" + repository.cloneFolder;
             nasa.makeSurePathExists(localRepositoryPath);
+            var next = function(){
+                index++;
+                nasa.processRepository(repositories, index);
+            };
             if (repository.type == "GIT"){
-                exec("git clone " + repository.source + " " + localRepositoryPath, function(error, stdout, stderr){
-                    nasa.printShellInfo(error, stdout, stderr);
-                    index++;
-                    nasa.processRepository(repositories, index);
-                });
+                if (fs.existsSync(localRepositoryPath)){
+                    //we should just pull changes
+                    //todo: actually pull changes...
+                    console.log("we got that already!")
+                    next();
+                }
+                else{
+                    //we need to clone
+                    exec("git clone " + repository.source + " " + localRepositoryPath, function(error, stdout, stderr){
+                        nasa.printShellInfo(error, stdout, stderr);
+                        next();
+                    });
+                }
             }
             else{
                 console.log('TODO: implement synchronizer for ' + repository.source);
