@@ -1,6 +1,7 @@
 //This config file is temporary.  We are probably going to have a more robust
 // data source for all the repositories we want to pull from.
 var config = {
+    localRepositoriesFolder: 'NasaGitRepositories',
     repositories: [
 //        {
 //            type: 'NASA',
@@ -8,13 +9,15 @@ var config = {
 //            target: 'https://github.com/NASATest/DQSS.git'
 //        },
         {
+            cloneFolder: 'mct',
             type: 'GIT',
-            source: 'http://github.com/nasa/mct.git',
+            source: 'https://github.com/nasa/mct.git',
             target: 'https://github.com/NASATest/mct.git'
         },
         {
+            cloneFolder: 'CertWare',
             type: 'GIT',
-            source: 'http://nasa.github.com/CertWare.git',
+            source: 'https://github.com/nasa/CertWare.git',
             target: 'https://github.com/NASATest/CertWare.git'
 //        },
 //        {
