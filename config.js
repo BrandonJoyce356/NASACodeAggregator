@@ -3,53 +3,53 @@
 var config = {
     repositories: [
 //        {
-//            type: 'GIT',
+//            type: 'NASA',
 //            source: 'http://opensource.gsfc.nasa.gov/projects/DQSS/index.php',
 //            target: 'https://github.com/NASATest/DQSS.git'
 //        },
         {
             type: 'GIT',
-            source: 'http://github.com/nasa/mct',
+            source: 'http://github.com/nasa/mct.git',
             target: 'https://github.com/NASATest/mct.git'
         },
         {
             type: 'GIT',
-            source: 'http://nasa.github.com/CertWare',
+            source: 'http://nasa.github.com/CertWare.git',
             target: 'https://github.com/NASATest/CertWare.git'
 //        },
 //        {
-//            type: 'GIT',
+//            type: 'APACHE',
 //            source: 'http://svn.apache.org/repos/asf/oodt',
 //            target: 'https://github.com/NASATest/oodt.git'
 //        },
 //        {
-//            type: 'GIT',
+//            type: 'SRCFRG',
 //            source: 'http://sourceforge.net/projects/datacasting/',
 //            target: 'https://github.com/NASATest/datacasting.git'
 //        },
 //        {
-//            type: 'GIT',
+//            type: 'SRCFRG',
 //            source: 'http://sourceforge.net/projects/ion-dtn/',
 //            target: 'https://github.com/NASATest/ion-dtn.git'
 //        },
 //        {
-//            type: 'GIT',
+//            type: 'SRCFRG',
 //            source: 'http://sourceforge.net/projects/dptoolkit/',
 //            target: 'https://github.com/NASATest/dptoolkit.git'
 //        },
 //        {
-//            type: 'GIT',
+//            type: 'SRCFRG',
 //            source: 'http://sourceforge.net/projects/coreflightexec/files/cFE-6.1.1/',
 //            target: 'https://github.com/NASATest/cFE-6.1.1.git'
 //        },
 //        {
 //            type: 'GIT',
-//            source: 'http://github.com/OpenVSP/OpenVSP',
+//            source: 'http://github.com/OpenVSP/OpenVSP.git',
 //            target: 'https://github.com/NASATest/OpenVSP.git'
 //        },
 //        {
 //            type: 'GIT',
-//            source: 'https://github.com/sunpy/sunpy',
+//            source: 'https://github.com/sunpy/sunpy.git',
 //            target: 'https://github.com/NASATest/sunpy.git'
         }
     ]
