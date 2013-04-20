@@ -7,6 +7,23 @@ var nasa = {
         if (!fs.existsSync(path))
             fs.mkdir(path);
     },
+    processRepository: function(repositories, index){
+        if (repositories.length > index){
+            var repository = repositories[index];
+            var localRepositoryPath = __dirname + "/" + config.localRepositoriesFolder + "/" + repository.cloneFolder;
+            nasa.makeSurePathExists(localRepositoryPath);
+            if (repository.type == "GIT"){
+                exec("git clone " + repository.source + " " + localRepositoryPath, function(error, stdout, stderr){
+                    nasa.printShellInfo(error, stdout, stderr);
+                    index++;
+                    nasa.processRepository(repositories, index);
+                });
+            }
+            else{
+                console.log('TODO: implement synchronizer for ' + repository.source);
+            }
+        }
+    },
     printShellInfo: function(error, stdout, stderr){
         sys.print('stdout: ' + stdout);
         sys.print('stderr: ' + stderr);
@@ -24,18 +41,5 @@ nasa.makeSurePathExists(path);
 //we read credentials from another config that will not be included in source control.
 var credentials = require('./credentials');
 
-//For now we just loop through the repositories and sync them to a target!
-for (var i=0;i < config.repositories.length;i++)
-{
-    var repository = config.repositories[i];
-    var localRepositoryPath = __dirname + "/" + config.localRepositoriesFolder + "/" + repository.cloneFolder;
-    nasa.makeSurePathExists(localRepositoryPath);
-    if (repository.type == "GIT"){
-        exec("git clone " + repository.source + " " + localRepositoryPath, function(error, stdout, stderr){
-            nasa.printShellInfo(error, stdout, stderr);
-        });
-    }
-    else{
-        console.log('TODO: implement synchronizer for ' + repository.source);
-    }
-}
+//This will locally clone all the defined git repositories
+nasa.processRepository(config.repositories, 0);
