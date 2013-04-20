@@ -1,4 +1,6 @@
-var config = require('./config')
+var config = require('./config');
+//we read credentials from another config that will not be included in source control.
+var credentials = require('.credentials');
 
 //For now we just loop through the repositories and sync them to a target!
 for (var i=0;i < config.repositories.length;i++)
