@@ -13,7 +13,7 @@ module.exports = function(repository, callback){
         }
     }
 
-    if (repository.type == "GIT"){
+    if (repository.type.toUpperCase() === "GIT"){
          console.log("Updating Git repository " + repository.source);
          //clone if non-existing...
          if (!fs.existsSync(repository.cloneFolder + "/" + ".git")){
