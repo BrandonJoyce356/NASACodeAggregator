@@ -60,7 +60,7 @@ do
    url=http://sourceforge.net/projects/$projname/
   fi
   wget -q $url -O $title.html
-  source=`awk -F \" '/File released:/ {print $2}' $title.html | sed s/\\\/download//`
+  source=`awk -F \" '/File released:/ {print $2}' $title.html | sed s/\\\/download// | grep -v 'webloc$'`
   wget -N $source
 
                                                      ####################
