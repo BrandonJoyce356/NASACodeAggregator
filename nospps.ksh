@@ -56,7 +56,7 @@ do
  then
   if [ -z "`echo $url | grep http://sourceforge.net`" ]
   then
-   projname=`echo $u | cut -b 8- | awk -F . '{print $1}'`
+   projname=`echo $u | cut -b 8- | sed s/\\\/files\\/.\*// | awk -F . '{print $1}'`
    url=http://sourceforge.net/projects/$projname/
   fi
   wget -q $url -O $title.html
