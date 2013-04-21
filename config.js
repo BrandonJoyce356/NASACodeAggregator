@@ -1,13 +1,13 @@
 //This config file is temporary.  We are probably going to have a more robust
 // data source for all the repositories we want to pull from.
 var config = {
-    localRepositoriesFolder: 'NasaGitRepositories',
     repositories: [
-//        {
-//            type: 'NASA',
-//            source: 'http://opensource.gsfc.nasa.gov/projects/DQSS/index.php',
-//            target: 'https://github.com/NASATest/DQSS.git'
-//        },
+        {
+            cloneFolder: 'NASAXaevTest',
+            type: 'GIT',
+            source: 'https://github.com/Xaevion/NASAXaevTest.git',
+            target: 'https://github.com/NASATest/NASAXaevTest.git'
+        },
         {
             cloneFolder: 'mct',
             type: 'GIT',
@@ -19,6 +19,11 @@ var config = {
             type: 'GIT',
             source: 'https://github.com/nasa/CertWare.git',
             target: 'https://github.com/NASATest/CertWare.git'
+        }
+//        {
+//            type: 'NASA',
+//            source: 'http://opensource.gsfc.nasa.gov/projects/DQSS/index.php',
+//            target: 'https://github.com/NASATest/DQSS.git'
 //        },
 //        {
 //            type: 'APACHE',
@@ -54,7 +59,6 @@ var config = {
 //            type: 'GIT',
 //            source: 'https://github.com/sunpy/sunpy.git',
 //            target: 'https://github.com/NASATest/sunpy.git'
-        }
     ]
 };
 
