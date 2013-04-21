@@ -42,3 +42,7 @@ Since this project was built in one weekend, we knew we wouldn't be able to impl
       //make sure to fire the callback when you're done so NodeJS will love you.  
       callback();
     }
+
+The Export Process (Help Needed!)
+---------------------------------
+Help us finish github.exporter.js!  The control flow is already stubbed out.  We just need to have all local repositories pushed to GitHub.  Our venue has port 22 closed so unless we find a quick workaround this issue will remain open.    
