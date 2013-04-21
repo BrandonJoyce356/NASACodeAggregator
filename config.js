@@ -42,7 +42,7 @@ var config = {
 //            target: 'https://github.com/NASATest/ion-dtn.git'
 //        },
 //        {
-//            type: 'SRCFRG',
+//            type: 'GIT',
 //            source: 'http://sourceforge.net/projects/dptoolkit/',
 //            target: 'https://github.com/NASATest/dptoolkit.git'
 //        },
