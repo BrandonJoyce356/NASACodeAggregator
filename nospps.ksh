@@ -29,7 +29,7 @@ done
 i=1
 cat nospps-project.title | while read line
 do
- title=`echo $line | tr ' /()' '----'`
+ title=`echo $line | tr ' /(),' '-----'`
  mkdir -p $title; cd $title
  url=`sed -n "$i"p ../nospps-project.url`
  if [ "`echo $url | egrep "(\\.htm$|\\.php$|\\.html$|\\.cgi$)"`" ]
@@ -49,19 +49,36 @@ do
   for item in $source
   do
    wget -N ${url%/*}/$item
+   if [ $? -ne 0 ]
+   then
+    echo; echo ----------------- title = $title :: item = $item;echo
+   fi
+
   done
 
                                                      ####################
  elif [ "`echo $url | grep sourceforge.net`" ]                 ########## nasa's sourceforge project scraper
  then
+
+  if [ "`echo $url | grep /files/`" ]
+  then
+   url=`echo $url | awk -F /files/ '{print $1 "/"}'`
+  fi
+
+
   if [ -z "`echo $url | grep http://sourceforge.net`" ]
   then
-   projname=`echo $u | cut -b 8- | awk -F . '{print $1}'`
+   projname=`echo $url | cut -b 8- | awk -F . '{print $1}'`
    url=http://sourceforge.net/projects/$projname/
   fi
   wget -q $url -O $title.html
-  source=`awk -F \" '/File released:/ {print $2}' $title.html | sed s/\\\/download// | grep -v 'webloc$'`
+  source=`awk -F \" '/File released:/ {print $2}' $title.html | sed s/\\\/download// | grep -v .webloc$`
   wget -N $source
+   if [ $? -ne 0 ]
+   then
+    echo;echo ----------------- title = $title :: source = $source;echo
+   fi
+
 
                                                      ####################
  else                                                          ########## unknown repo type -- dont know how to scrape
