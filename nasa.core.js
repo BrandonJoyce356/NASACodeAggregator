@@ -9,6 +9,7 @@ module.exports = function(fs, async){
             });
         },
         bootstrap: function(){
+            //Do any necessary setup in here, it will run once when the app is started.
             //setup the local repositories folder
             var path = __dirname + "/NASAGitRepositories";
             if (!fs.existsSync(path))
