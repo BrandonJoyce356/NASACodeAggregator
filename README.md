@@ -7,7 +7,7 @@ The goal is to take many open source projects spread around the internet, and  a
 
 How It Works
 ------------
-The aggregator uses varios importer extensions to pull changes from remote repositories onto the local machine and convert them to Git if necessary.  After that process, the local repositories are pushed to NASA's GitHub account for the world to see. 
+The aggregator uses various importer extensions to pull changes from remote repositories onto the local machine and convert them to Git if necessary.  After that process, the local repositories are pushed to NASA's GitHub account for the world to see. 
 
 Configuration
 -------------
