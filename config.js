@@ -22,33 +22,33 @@ var config = {
             target: 'https://github.com/NASATest/CertWare.git'
         }
 //        {
-//            type: 'NASA',
-//            source: 'http://opensource.gsfc.nasa.gov/projects/DQSS/index.php',
+//            type: 'TAR',
+//            source: 'http://opensource.gsfc.nasa.gov/projects/DQSS/dqss_64.tar',
 //            target: 'https://github.com/NASATest/DQSS.git'
 //        },
 //        {
-//            type: 'APACHE',
+//            type: 'SVN',
 //            source: 'http://svn.apache.org/repos/asf/oodt',
 //            target: 'https://github.com/NASATest/oodt.git'
 //        },
 //        {
-//            type: 'SRCFRG',
-//            source: 'http://sourceforge.net/projects/datacasting/',
+//            type: 'GIT',
+//            source: 'http://git.code.sf.net/p/datacasting/code datacasting-code',
 //            target: 'https://github.com/NASATest/datacasting.git'
 //        },
 //        {
-//            type: 'SRCFRG',
-//            source: 'http://sourceforge.net/projects/ion-dtn/',
+//            type: 'SVN',
+//            source: 'http://svn.code.sf.net/p/ion-dtn/code/trunk ion-dtn-code',
 //            target: 'https://github.com/NASATest/ion-dtn.git'
 //        },
 //        {
 //            type: 'GIT',
-//            source: 'http://sourceforge.net/projects/dptoolkit/',
+//            source: 'http://git.code.sf.net/p/dptoolkit/code dptoolkit-code',
 //            target: 'https://github.com/NASATest/dptoolkit.git'
 //        },
 //        {
-//            type: 'SRCFRG',
-//            source: 'http://sourceforge.net/projects/coreflightexec/files/cFE-6.1.1/',
+//            type: 'GIT',
+//            source: 'http://git.code.sf.net/p/coreflightexec/code coreflightexec-code',
 //            target: 'https://github.com/NASATest/cFE-6.1.1.git'
 //        },
 //        {
