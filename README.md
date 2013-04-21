@@ -24,6 +24,7 @@ All configuration is currently held in the config.js file.
             }
         ]
     }
+    module.exports = config;
 
 *waitTime* - How many milliseconds to wait between running the process again.
 *repositories* - Source/Target setup for repositories.  Make sure the type is an available importer type. 
