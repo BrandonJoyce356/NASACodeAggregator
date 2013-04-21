@@ -1,12 +1,13 @@
 //This config file is temporary.  We are probably going to have a more robust
 // data source for all the repositories we want to pull from.
 var config = {
+    waitTime: 3600000,
     repositories: [
         {
             cloneFolder: 'NASAXaevTest',
             type: 'GIT',
             source: 'https://github.com/Xaevion/NASAXaevTest.git',
-            target: 'https://github.com/NASATest/NASAXaevTest.git'
+            target: 'git@github.com:NASATest/NASAXaevTest.git'
         },
         {
             cloneFolder: 'mct',

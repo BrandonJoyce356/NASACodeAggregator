@@ -1,12 +1,20 @@
 module.exports = function(fs, async){
     var nasa = {
+        pushLocalRepositoriesToGitHub: function(repositories){
+            var exporter = require('./github.exporter.js');
+            console.log("exporting to GitHub");
+            async.eachSeries(repositories, exporter, function(err){
+                if (err)
+                    console.log(err);
+            });
+        },
         bootstrap: function(){
             //setup the local repositories folder
             var path = __dirname + "/NASAGitRepositories";
             if (!fs.existsSync(path))
                 fs.mkdir(path);
         },
-        updateLocalRepositories: function(repositories){
+        updateLocalRepositories: function(repositories, updateComplete){
             var importerFiles = fs.readdirSync('./Importers');
             var importers = [];
             for (var i=0;i<importerFiles.length;i++) {
@@ -28,11 +36,10 @@ module.exports = function(fs, async){
                 }, function(err){
                     if (err)
                         console.log(err);
+                    else
+                        updateComplete();
                 }
             );
-        },
-        pushLocalRepositoriesToGitHub: function(){
-
         }
     }
     return nasa;
