@@ -9,6 +9,25 @@ How It Works
 ------------
 The aggregator uses varios importer extensions to pull changes to remote repositories onto the local machine and convert them to Git if necessary.  After that process, the local repositories are pushed to NASA's GitHub account for the world to see. 
 
+Configuration
+-------------
+All configuration is currently held in the config.js file.  
+    
+    var config = {
+        waitTime: 3600000,
+        repositories: [
+            {
+                cloneFolder: 'NASAXaevTest',
+                type: 'GIT',
+                source: 'https://github.com/Xaevion/NASAXaevTest.git',
+                target: 'git@github.com:NASATest/NASAXaevTest.git'
+            }
+        ]
+    }
+
+*waitTime* - How many milliseconds to wait between running the process again.
+*repositories* - Source/Target setup for repositories.  Make sure the type is an available importer type. 
+
 Adding Importers
 ----------------
 Since this project was built in one weekend, we knew we wouldn't be able to implement an importer for every repository type...(mercurial, svn, etc.)  So, here's how you can help!  Adding an importer is just a matter of adding a new .js file to the Importers folder of the project.  Here is the basic structure...
