@@ -4,6 +4,7 @@
 # s. henry herold (henry.herold@comcast.net)
 # Brandon Joyce
 # Marc Phillips
+# Pawel Grzegrzolka
 
 # usage: ./nospps.ksh
 # description:  this program scrapes the project url's from code.nasa.gov and parses the links to get the latest downloads of each project.
